@@ -1,12 +1,8 @@
-import React  from 'react';
-
-
-const ProfileImage = (props) => {
- return (
-    <div>
-        <img src= {props.src} alt={props.alt} width={props.width} height={props.height} />
-        {props.children}
-    </div>
- )
-}
+const ProfileImage = ({ src, alt, width, height }) => {
+  return (
+    <>
+      <img src={src} alt={alt} width={width} height={height} />
+    </>
+  );
+};
 export default ProfileImage;
