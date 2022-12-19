@@ -1,33 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-const Profile = ({FullName , Bio , Profession , alertMyInput}) => {
-    const myStyle={
-        textAlign:"center",
-        color:"rgb(9, 30, 90)",
-        fontFamily: 'Roboto Condensed',margin:"auto",
-    }
-    return (
-        <div style ={{color:"black",textAlign:"center"}} >
-            <h1>Self-Profile </h1>
-            <h1 style ={myStyle}> Hello  {FullName}</h1>
-            <h1 style ={myStyle}>  {Bio}</h1>
-            <h1 style ={myStyle}>  {Profession}</h1>
-            <button onClick={() => alertMyInput(`My name is ${FullName} `)}>
-     ClickMe
-   </button>
+import React from "react";
+import PropTypes from "prop-types";
 
-        </div>
-        
-    )
+
+function Profile({ fullName, bio, profession, handleName,children }) {
+  const stylesObject = { color: "red", textAlign: "center" };
+  return <div style={stylesObject}>
+      <h3>{fullName}</h3>
+      <p>{bio}</p>
+      <p>{profession}</p> 
+      <img src={children} alt="Profile" style={{"width" : 300 , "height" : 300 }} />
+      <br/>
+      <button>
+      <a href="" onClick={handleName}>
+          Click me
+      </a>
+      </button>
+  </div>;
 }
 Profile.defaultProps = {
-    FullName : "taher",
-    Bio : "My Bio",
-    Profession : "Developer"
+  fullName: "full Name",
+  bio:"bio",
+  profession: "profession",
 }
 Profile.propTypes = {
-    FullName: PropTypes.string,
-    Bio: PropTypes.string,
-    Profession: PropTypes.string
-  }
-export default Profile
+  fullName: PropTypes.string,
+  bio: PropTypes.string,
+  profession: PropTypes.string
+}
+
+export default Profile;
